@@ -1,0 +1,4 @@
+{
+  "testcafeTestRunner.workspaceRoot": "./",
+  "testcafeTestRunner.customArguments": "--no-color --debug-on-fail --fixture-base-url testserver:8080",
+}

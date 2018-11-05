@@ -17,3 +17,14 @@ npm install
 ```
 npm run start
 ```
+
+6. Run the tests
+```
+npm run test
+```
+
+# Running tests from Visual Studio Code
+Install [testcafe-test-runner](https://marketplace.visualstudio.com/items?itemName=romanresh.testcafe-test-runner) extension on your IDE.
+
+A folder `.vscode` exists on the root of th project. In order to activate the `settings.json` you need to open the project folder with Visual Studio Code.
+

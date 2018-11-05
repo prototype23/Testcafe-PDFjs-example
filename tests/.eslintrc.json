@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": false,
+        "es6": true,
+        "node": true
+    },
+    "plugins": [
+      "testcafe"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:testcafe/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": "off",
+        "no-debugger": "off",
+        "no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
+    }
+}

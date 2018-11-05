@@ -6,6 +6,7 @@ $(document).ready(function () {
     var iframe = modal.find('.pdf-viewer').eq(0);
     var modalsTopMargin = 120;
     var resizeHandler;
+    var win = $(window);
 
     function disableButton() {
       button
@@ -31,12 +32,13 @@ $(document).ready(function () {
     }
 
     function resizeIframe() {
-      var newHeight = ($(window).innerHeight() || 500) - modalsTopMargin;
+      var newHeight = (win.innerHeight() || 500) - modalsTopMargin;
       iframe.height(newHeight);
+      console.log('resized!');
     }
 
     function responsiveIFrame() {
-      $(window)
+      win
         .off('resize.responsiveIFrame')
         .on('resize.responsiveIFrame', function () {
           clearTimeout(resizeHandler);
@@ -48,7 +50,10 @@ $(document).ready(function () {
     function loadPDF(options) {
       function onError() {
         iframe.attr('data-iframe-ready', 'true');
+
         enableButton();
+
+        win.trigger('resize');
       }
 
       function onLoad() {
@@ -56,6 +61,7 @@ $(document).ready(function () {
 
         onPageRender({
           callback: function() {
+            win.trigger('resize');
             iframe.attr('data-page-rendered', 'true');
             enableButton();
           }
@@ -75,8 +81,7 @@ $(document).ready(function () {
 
       disableButton();
       openPdfModal();
-      loadPDF({src: $(this).attr('data-src')});
-      resizeIframe();
+      loadPDF({src: button.attr('data-src')});
     }
 
     function bindButton() {
