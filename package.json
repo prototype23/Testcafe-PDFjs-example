@@ -24,6 +24,6 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-plugin-testcafe": "^0.2.1",
-    "testcafe": "^0.21.1"
+    "testcafe": "^2.2.0"
   }
 }
